@@ -10,8 +10,8 @@ Variables are a fundamental concept in any programming language. A variable func
 
 In TypeScript, variables are created using either the `let` or `const` keywords, similar to JavaScript.
 
-*   **Using `let`
-*   **Using `const`
+*  Using `let`
+*  Using `const`
 
 ### III. Differences Between `let` and `const`
 
@@ -46,3 +46,67 @@ When creating a variable name, five rules must be followed:
 3.  **Allowed Starting Characters:** A variable name **can start with a letter, an underscore, or a dollar sign**.
 4.  **Case Sensitivity:** TypeScript variable names are **case sensitive**. For example, a variable named `num` (lowercase 'n') is completely different from a variable named `Num` (uppercase 'N').
 5.  **Reserved Keywords:** You **cannot use TypeScript reserved keywords** as variable names. Examples of reserved keywords include `class`, `if`, and `while`.
+
+---
+## TypeScript Data Types
+
+All values assigned to a variable have a specific type, such as string, number, Boolean, object, array, etc.. The main data types discussed are string, number, and Boolean
+
+---
+
+### 1. String Data Type
+
+A string is a sequence of characters, which is essentially a text value.
+
+**Methods for Creating Strings in TypeScript:**
+
+1.  **Single Quotes**:
+    ```typescript
+    const ST1 = 'this is a string created using single codes' 
+    ```
+2.  **Double Quotes**:
+    ```typescript
+    const ST2 = "this is a string created using double codes"
+    ```
+    *   There is practically no difference between creating a string using single quotes or double quotes.
+    *   **Limitation:** Strings created using single quotes or double quotes **cannot** span multiple lines; this will cause an error.
+    *   **Limitation:** Template literal syntax (for embedding variables) is **not possible** when using single or double quotes, leading to unexpected results (e.g., the template syntax itself is rendered as part of the string).
+
+3.  **Backticks**:
+    ```typescript
+    const ST3 = `this is a string created using back ticks`
+    ```
+    *   **Benefits of Backticks:**
+        *   Allows strings to be written in **multiple lines** without causing an error, unlike single or double quotes.
+        *   Supports **template literal syntax** (e.g., `${str1}`), allowing the value of a variable to be rendered inside the string.
+
+---
+
+### 2. Number Data Type
+
+The `number` type represents both **integer** and **floating-point numbers** in TypeScript.
+
+*   TypeScript (and JavaScript) does not have separate data types for integer types or floating-point types; there is only one `number` data type which stores both.
+*   A numeric value can be assigned to a variable (e.g., integer `12` or floating-point `3.14`).
+*   **Key Concept:** TypeScript numbers are **always floating-point numbers**. Even when assigning an integer value (like `12`), it is saved in memory as a floating-point number (e.g., `12.0`).
+
+---
+
+### 3. Boolean Data Type
+
+The Boolean data type is used exclusively to store the value **true** or **false**. It cannot store any other values.
+
+*   **Creation:** Assign `true` or `false` to a variable (e.g., `isEligible = true`, `isEqual = false`).
+*   **Comparison Operations:** A Boolean value is also returned when using a comparison operator. The result of a comparison operation (e.g., `10 < 15`) returns a Boolean value (`true` or `false`), which can then be assigned to a Boolean type variable.
+
+#### Truthy and Falsy Values
+
+TypeScript, like JavaScript, includes the concept of truthy and falsy values, which are non-Boolean values that behave as `true` or `false` when converted to the Boolean type.
+
+*   **Falsy Values:** Non-Boolean values that return `false` when converted to the Boolean type.
+    *   The primary falsy values to remember are **zero (0)**, **empty string ("")**, **null**, and **undefined**.
+    *   *Example:* Converting `0` or an empty string to Boolean returns `false`.
+
+*   **Truthy Values:** Non-Boolean values that return `true` when converted to the Boolean type.
+    *   All values apart from the noted falsy values are considered truthy.
+    *   *Example:* Converting `100` or a non-empty string (e.g., a string with a space or the string "hello") to Boolean returns `true`.
